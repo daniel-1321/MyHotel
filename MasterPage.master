@@ -1,0 +1,106 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252" />
+    <title></title>
+    <link rel="icon" href="~/image/favicon.ico">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="style/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="script/sweetalert.js"></script>
+    <script>
+        function showAlert() {
+            Swal.fire(
+                'DONE',
+                'success'
+            )
+        }
+    </script>
+</head>
+<body>
+    <form runat="server">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+            <div class="collapse navbar-collapse" id="navbarColor01">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active my-auto h4" s>
+                        <a class="nav-link" style="color:coral" href="Index.aspx">Home</a>
+                    </li>
+                    <li class="nav-item my-auto h4" >
+                        <a class="nav-link" style="color:coral" href="About.aspx">About</a>
+                    </li>
+                    <li class="nav-item my-auto h4">
+                            <a class="nav-link" style="color:coral" href="Search.aspx">Search</a>
+                    </li>
+
+                </ul>
+                <div class="form-inline">
+                    <asp:Label ID="lblCusName" runat="server" Text=""></asp:Label>
+                    <asp:LinkButton ID="lblLogout" runat="server" CssClass="mx-2 btn btn-danger" OnClick="lblLogout_Click" Visible="false">LOGOUT</asp:LinkButton>
+                    <asp:LinkButton ID="lblMyAccount" runat="server" CssClass="mx-2 btn btn-info" OnClick="lblMyAccount_Click" Visible="false">MY ACCOUNT</asp:LinkButton>
+                </div>
+            </div>
+        </nav>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <!-- MY FOOTER -->
+        <div class="container-fluid bg-primary py-3 mt-3">
+            <div class="row mt-2">
+                <div class="col-sm-3">
+                    <h2 class="logo">LOGO</h2>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li>Home</li>
+                        <li>Sign up</li>
+                        <li>Downloads</li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>About us</h5>
+                    <ul>
+                        <li>Company</li>
+                        <li>Contact us</li>
+                        <li>Reviews</li>
+                    </ul>
+                </div>
+                <div class="col-sm-2">
+                    <h5>Support</h5>
+                    <ul>
+                        <li>FAQ</li>
+                        <li>Help desk</li>
+                        <li>Forums</li>
+                    </ul>
+                </div>
+                <div class="col-sm-3">
+                    <div class="social-networks">
+                        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                    <button type="button" class="btn btn-default">Contact us</button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright text-center mb-0">
+            <p>© 2016 Copyright Text </p>
+        </div>
+    </form>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
